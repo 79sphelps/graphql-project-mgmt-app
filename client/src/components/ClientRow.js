@@ -1,7 +1,5 @@
-import { FaTrash } from "react-icons/fa";
-import React from "react";
-// import { useMutation } from '@apollo/client';
 import { useMutation } from "@apollo/client/react";
+import { FaTrash } from "react-icons/fa";
 import { DELETE_CLIENT } from "./mutations";
 import { GET_CLIENTS, GET_PROJECTS } from "./queries";
 
@@ -24,4 +22,5 @@ const ClientRow = ({ client }) => {
     </tr>
   );
 };
+
 export default ClientRow;

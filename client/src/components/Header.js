@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../logo.svg";
 
 const Header = () => {
@@ -9,10 +8,11 @@ const Header = () => {
           <div className="d-flex">
             <img src={logo} alt="logo" className="mr-2" />
             <div>Project Management</div>
-          </div>{" "}
+          </div>
         </a>
       </div>
     </nav>
   );
 };
+
 export default Header;

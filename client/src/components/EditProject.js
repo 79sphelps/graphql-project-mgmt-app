@@ -1,5 +1,5 @@
+import { useState } from "react";
 import { useMutation } from "@apollo/client/react";
-import React, { useState } from "react";
 import { UPDATE_PROJECT } from "./mutations";
 import { GET_PROJECT } from "./queries";
 
@@ -37,8 +37,7 @@ const EditProject = ({ project }) => {
         </div>
         <div className="mb-3">
           <label
-            className="form-
-                    label"
+            className="form-label"
           >
             Description
           </label>
@@ -64,8 +63,7 @@ const EditProject = ({ project }) => {
         </div>
         <button
           type="submit"
-          className="btn
-                btn-primary"
+          className="btn btn-primary"
         >
           Submit
         </button>
@@ -73,4 +71,5 @@ const EditProject = ({ project }) => {
     </div>
   );
 };
+
 export default EditProject;

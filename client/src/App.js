@@ -2,9 +2,6 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { ApolloProvider } from "@apollo/client/react";
 import { HttpLink } from "@apollo/client"; // @apollo/client/link/http
 import Header from "./components/Header";
-// import Clients from "./components/Clients";
-// import AddClient from "./components/AddClient";
-// import Projects from "./components/Projects";
 import Project from "./components/Project";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
@@ -15,7 +12,6 @@ const httpLink = new HttpLink({
 });
 
 const client = new ApolloClient({
-  // uri: "http://localhost:5000/graphql",
   link: httpLink,
   cache: new InMemoryCache(),
 });
@@ -27,10 +23,6 @@ function App() {
         <Router>
           <Header />
           <div className="container">
-            {/* <Projects />
-          <AddClient />
-          <Clients /> */}
-
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects/:id" element={<Project />} />

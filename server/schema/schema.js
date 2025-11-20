@@ -1,4 +1,4 @@
-const { projects, clients } = require("../dummyData.js");
+// const { projects, clients } = require("../dummyData.js");
 const Project = require("../models/Project");
 const Client = require("../models/Client");
 const {
@@ -10,13 +10,6 @@ const {
   GraphQLNonNull,
   GraphQLEnumType,
 } = require("graphql");
-
-// const {
-//   GraphQLObjectType,
-//   GraphQLID,
-//   GraphQLString,
-//   GraphQLSchema,
-// } = require("graphql");
 
 // Project Type
 const ProjectType = new GraphQLObjectType({
@@ -66,17 +59,6 @@ const mutation = new GraphQLObjectType({
         return client.save();
       },
     },
-
-    // deleteClient: {
-    //   type: ClientType,
-    //   args: {
-    //     id: { type: GraphQLNonNull(GraphQLID) },
-    //   },
-    //   resolve(parent, args) {
-    //     // return Client.findByIdAndRemove(args.id);
-    //     return Client.findByIdAndDelete(args.id);
-    //   },
-    // },
 
     deleteClient: {
       type: ClientType,
@@ -204,4 +186,5 @@ const RootQuery = new GraphQLObjectType({
     },
   },
 });
+
 module.exports = new GraphQLSchema({ query: RootQuery, mutation });

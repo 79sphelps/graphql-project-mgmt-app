@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useMutation } from "@apollo/client/react";
 import { FaUser } from "react-icons/fa";
 import { ADD_CLIENT } from "./mutations";
 import { GET_CLIENTS } from "./queries";
-// import { useMutation } from '@apollo/client';
-import { useMutation } from "@apollo/client/react";
 
 const AddClient = () => {
   const [name, setName] = useState("");
@@ -21,8 +20,10 @@ const AddClient = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || phone === "") return;
-    alert("Please fill in all fields");
+    if (name === "" || email === "" || phone === "") {
+      alert("Please fill in all fields");
+      return;
+    }
     addClient(name, email, phone);
     setName("");
     setEmail("");
@@ -54,7 +55,6 @@ const AddClient = () => {
               <h5 className="modal-title" id="addClientModalLabel">
                 Add Client
               </h5>
-
               <button
                 type="button"
                 className="btn-close"
@@ -86,7 +86,6 @@ const AddClient = () => {
                 </div>
                 <div className="mb-3">
                   <label className="form-label">Phone</label>
-
                   <input
                     type="text"
                     className="form-control"
@@ -111,4 +110,5 @@ const AddClient = () => {
     </>
   );
 };
+
 export default AddClient;

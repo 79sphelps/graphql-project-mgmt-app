@@ -1,8 +1,7 @@
-// import { useMutation, useQuery } from '@apollo/client';
+import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client/react";
-import React, { useState } from "react";
-import { GET_CLIENTS, GET_PROJECTS } from "./queries";
 import { FaList } from "react-icons/fa";
+import { GET_CLIENTS, GET_PROJECTS } from "./queries";
 import { ADD_PROJECT } from "./mutations";
 
 const AddProject = () => {
@@ -115,7 +114,6 @@ const AddProject = () => {
                         ))}
                       </select>
                     </div>
-
                     <button
                       type="submit"
                       data-bs-
@@ -134,4 +132,5 @@ const AddProject = () => {
     </>
   );
 };
+
 export default AddProject;

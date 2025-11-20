@@ -1,16 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client/react";
 import { FaTrash } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import { DELETE_PROJECT } from "./mutations";
 import { GET_PROJECTS } from "./queries";
 
 const DeleteProject = ({ projectId }) => {
   const navigate = useNavigate();
+
   const [deleteProject] = useMutation(DELETE_PROJECT, {
     variables: { id: projectId },
     onCompleted: () => navigate("/"),
     refetchQueries: [{ query: GET_PROJECTS }],
   });
+
   return (
     <div className="d-flex mt-5 ms-auto">
       <button className="btn btn-danger m-2" onClick={deleteProject}>
@@ -19,4 +21,5 @@ const DeleteProject = ({ projectId }) => {
     </div>
   );
 };
+
 export default DeleteProject;

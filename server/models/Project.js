@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const ProjectSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -15,4 +16,5 @@ const ProjectSchema = new mongoose.Schema({
     ref: "Client",
   },
 });
+
 module.exports = mongoose.model("Project", ProjectSchema);
