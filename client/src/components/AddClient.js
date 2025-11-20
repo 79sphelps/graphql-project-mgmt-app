@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client/react";
 import { FaUser } from "react-icons/fa";
-import { ADD_CLIENT } from "./mutations";
-import { GET_CLIENTS } from "./queries";
+import { ADD_CLIENT } from "../graphql/mutations";
+import { GET_CLIENTS } from "../graphql/queries";
 
 const AddClient = () => {
   const [name, setName] = useState("");

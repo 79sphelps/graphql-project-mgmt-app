@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client/react";
 import { FaEnvelope, FaPhone, FaIdBadge } from "react-icons/fa";
-import { GET_PROJECT } from "./queries";
+import { GET_PROJECT } from "../graphql/queries";
 import Spinner from "./Spinner";
 import DeleteProject from "./DeleteProject";
 import EditProject from "./EditProject";

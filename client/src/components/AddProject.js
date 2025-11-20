@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client/react";
 import { FaList } from "react-icons/fa";
-import { GET_CLIENTS, GET_PROJECTS } from "./queries";
-import { ADD_PROJECT } from "./mutations";
+import { GET_CLIENTS, GET_PROJECTS } from "../graphql/queries";
+import { ADD_PROJECT } from "../graphql/mutations";
 
 const AddProject = () => {
   const [name, setName] = useState("");
@@ -18,8 +18,9 @@ const AddProject = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || description === "" || status === "")
+    if (name === "" || description === "" || status === "") {
       return alert("Please fill in all fields");
+    }
     addProject(name, description, clientId, status);
     setName("");
     setDescription("");
